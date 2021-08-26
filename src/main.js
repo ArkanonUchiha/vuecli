@@ -193,3 +193,22 @@ console.log(redCar);
 
 curso.myFunction();
 curso.myFunction('a', 'b');
+
+console.log("Objeto Arguments en una Arrow Function dentro de una Regular Function");
+curso.myRegularFunction('a', 'b');
+
+console.log("El Parametro Rest ...args de una Arrow Function");
+curso.myRegularFunction2('A', 'B');
+
+// -----------------------------------------------------
+
+// EL RETURN IMPLICITO DE LAS ARROW FUNCTION CON UNA SOLA EXPRESION (SIN LLAVES)
+console.log("HALO NEVER DIE " + curso.incremento(41));
+
+// -----------------------------------------------------
+
+// REGULAR FUNCTION DEFINIENDO UN METODO, DENTRO DE UNA CLASE
+const batman = new curso.Hero("Batman");
+console.log(batman);
+batman.logName();
+

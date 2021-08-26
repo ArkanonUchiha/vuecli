@@ -295,10 +295,46 @@ let usuario = {
 
 // -----------------------------------------------------
 
-// EL OBJETO ESPECIAL "ARGUMENTS"
+// EL OBJETO ESPECIAL "ARGUMENTS" EN UNA REGULAR FUNCTION
 function myFunction() {
   console.log(arguments);
   console.log(arguments.length);
+}
+
+// EL OBJETO ESPECIAL "ARGUMENTS" EN UNA ARROW FUNCTION QUE ESTA DENTRO DE UNA REGULAR FUNCTION
+function myRegularFunction() {
+  const myArrowFunction = () => {
+    console.log(arguments);
+  };
+
+  myArrowFunction('c', 'd');
+}
+
+// EL PARAMETRO REST "...args" DE UNA ARROW FUNCTION
+function myRegularFunction2() {
+  const myArrowFunction2 = (...args) => {
+    console.log(args);
+  }
+
+  myArrowFunction2('C', 'D');
+}
+
+// -----------------------------------------------------
+
+// EL RETURN IMPLICITO DE LAS ARROW FUNCTION CON UNA SOLA EXPRESION (SIN LLAVES)
+const incremento = (num) => num + 1;
+
+// -----------------------------------------------------
+
+// REGULAR FUNCTION DEFINIENDO UN METODO, DENTRO DE UNA CLASE
+class Hero {
+  constructor(heroName) {
+    this.heroName = heroName;
+  }
+
+  logName() {
+    console.log(this.heroName);
+  }
 }
 
 // -----------------------------------------------------
@@ -317,7 +353,11 @@ export {
   persona,
   myObject,
   usuario,
-  myFunction
+  myFunction,
+  myRegularFunction,
+  myRegularFunction2,
+  incremento,
+  Hero
 };
 
 // -----------------------------------------------------
