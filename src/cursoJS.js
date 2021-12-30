@@ -326,7 +326,7 @@ const incremento = (num) => num + 1;
 
 // -----------------------------------------------------
 
-// REGULAR FUNCTION DEFINIENDO UN METODO, DENTRO DE UNA CLASE
+// USANDO UNA REGULAR FUNCTION PARA DEFINIR UN METODO, DENTRO DE UNA CLASE
 class Hero {
   constructor(heroName) {
     this.heroName = heroName;
@@ -334,6 +334,82 @@ class Hero {
 
   logName() {
     console.log(this.heroName);
+  }
+}
+
+// USANDO UNA ARROW FUNCTION PARA DEFINIR UN METODO, DENTRO DE UNA CLASE
+class Hero2 {
+  constructor(heroName2) {
+    this.heroName2 = heroName2;
+  }
+
+  logName2 = () => {
+    console.log(this.heroName2);
+  }
+}
+
+// -----------------------------------------------------
+
+// LA PALABRA RESERVADA 'NEW'
+function jugador() {}
+
+function jugador2() {
+  this.nombres = "Edwin Brandon";
+  this.apellidos = "Lopez Martinez";
+  this.edad = 28;
+  // this.imprimirJugador2 = function() {
+  this.imprimirJugador2 = () => {
+    return this.nombres + " " + this.apellidos + " y tengo " + this.edad + " años.";
+  }
+  console.log("Estoy dentro de la funcion 'jugador2'");
+}
+
+function jugador3(nombres, apellidos, edad) {
+  this.nombres = nombres;
+  this.apellidos = apellidos;
+  this.edad = edad;
+  this.imprimirJugador3 = () => {
+    return this.nombres + " " + this.apellidos + " y tengo " + this.edad + " años.";
+  }
+}
+
+// -----------------------------------------------------
+
+// PROTOTIPOS (PROTOTYPE) EN ES5
+// CREACION DE UNA CLASE (FUNCION CONSTRUCTORA)
+function Polygon(height, width) {
+  this.height = height;
+  this.width = width;
+}
+
+// CLASE (FUNCION CONSTRUCTORA) QUE HEREDA DE OTRA CLASE (FUNCION CONSTRUCTORA)
+function Square(side) {
+  this.prototype = Object.create(Polygon.prototype)
+  Polygon.call(this, side,side);
+  this.getArea = function() {
+    return this.height * this.width;
+  }
+}
+
+
+
+// PROTOTIPOS (PROTOTYPE) EN ES6+
+// CREACION DE UNA CLASE
+class Polygon2 {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+
+// CLASE QUE HEREDA DE OTRA CLASE (EXTENDS = HERENCIA)
+class Square2 extends Polygon2 {
+  constructor(side) {
+    super(side, side);
+  }
+
+  getArea() {
+    return this.height * this.width;
   }
 }
 
@@ -357,7 +433,13 @@ export {
   myRegularFunction,
   myRegularFunction2,
   incremento,
-  Hero
+  Hero,
+  Hero2,
+  jugador,
+  jugador2,
+  jugador3,
+  Square,
+  Square2
 };
 
 // -----------------------------------------------------

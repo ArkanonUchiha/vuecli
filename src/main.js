@@ -17,6 +17,8 @@ import * as animales from './test4.js';
 
 import * as curso from './cursoJS.js';
 
+import * as LoL from './game.js';
+
 Vue.config.productionTip = false;
 
 
@@ -207,8 +209,79 @@ console.log("HALO NEVER DIE " + curso.incremento(41));
 
 // -----------------------------------------------------
 
-// REGULAR FUNCTION DEFINIENDO UN METODO, DENTRO DE UNA CLASE
-const batman = new curso.Hero("Batman");
+// USANDO UNA REGULAR FUNCTION PARA DEFINIR UN METODO, DENTRO DE UNA CLASE
+const batman = new curso.Hero("Black Batman");
 console.log(batman);
-batman.logName();
+// batman.logName();
+
+// setTimeout(batman.logName, 1000);
+
+// setTimeout(batman.logName.bind(batman), 1000);
+
+// USANDO UNA ARROW FUNCTION PARA DEFINIR UN METODO, DENTRO DE UNA CLASE
+const spiderman = new curso.Hero2("Spider-man");
+console.log(spiderman);
+// spiderman.logName2();
+
+// setTimeout(spiderman.logName2, 1000);
+
+// -----------------------------------------------------
+
+// LA PALABRA RESERVADA 'NEW'
+var edwin = curso.jugador();
+var brandon = new curso.jugador();
+
+console.log("Palabra Reservada New");
+console.log(edwin);
+console.log(brandon);
+
+
+
+var individuo2 = new curso.jugador2();
+
+console.log(individuo2);
+console.log(individuo2.imprimirJugador2());
+
+
+
+var individuo3 = new curso.jugador3("Lucia Guadalupe", "Hernandez Madregal", 28);
+console.log(individuo3.imprimirJugador3());
+
+// -----------------------------------------------------
+
+// PROTOTIPOS (PROTOTYPE) EN ES5
+
+const cuadrado = new curso.Square(10);
+console.log(cuadrado);
+console.log(cuadrado.getArea());
+
+const cuadrado2 = new curso.Square2(5);
+console.log(cuadrado2);
+console.log(cuadrado2.getArea());
+
+// -----------------------------------------------------
+
+var Soraka = new LoL.Jugador("Soraka");
+var Jinx = new LoL.Jugador("Jinx");
+var Zyra = new LoL.Jugador("Zyra");
+
+console.log(Soraka);
+console.log(Jinx);
+console.log(Zyra);
+
+Soraka.curar(Jinx);
+Soraka.curar(Jinx);
+Soraka.curar(Jinx);
+Zyra.enredadera(Jinx);
+
+Jinx.atacar(Soraka);
+Jinx.atacar(Soraka);
+Jinx.atacar(Soraka);
+Zyra.enredadera(Jinx);
+Zyra.enredadera(Jinx);
+Zyra.enredadera(Jinx);
+Zyra.enredadera(Jinx);
+Zyra.enredadera(Jinx);
+
+// -----------------------------------------------------
 
