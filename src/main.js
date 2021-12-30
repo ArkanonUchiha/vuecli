@@ -285,3 +285,22 @@ Zyra.enredadera(Jinx);
 
 // -----------------------------------------------------
 
+// FUNCIONES typeof e instanceof
+
+curso.identificaTypeOf({});
+curso.identificaTypeOf(function() {});
+curso.identificaTypeOf(2);
+curso.identificaTypeOf(function() {
+  console.log('Soy una funcion anonima');
+});
+
+var EB = new curso.primeraFunc();
+curso.identificaTypeOf(EB);
+
+
+curso.identificaInstanceOf(2);
+curso.identificaInstanceOf('EB');
+curso.identificaInstanceOf(EB);
+
+// -----------------------------------------------------
+

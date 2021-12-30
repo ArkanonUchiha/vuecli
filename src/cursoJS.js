@@ -415,6 +415,30 @@ class Square2 extends Polygon2 {
 
 // -----------------------------------------------------
 
+// FUNCIONES typeof e instanceof
+
+function identificaTypeOf(param) {
+  console.log(typeof param);
+
+  if(typeof param == 'function') {
+    param();
+  } else {
+    console.log(param);
+  }
+}
+
+function identificaInstanceOf(param) {
+  console.log(param instanceof primeraFunc);
+}
+
+function primeraFunc() {
+  this.nombre = 'Brandon';
+  this.apellido = 'Lopez';
+}
+
+// -----------------------------------------------------
+
+
 export {
   imprimir,
   imprimirDos,
@@ -439,7 +463,10 @@ export {
   jugador2,
   jugador3,
   Square,
-  Square2
+  Square2,
+  identificaTypeOf,
+  identificaInstanceOf,
+  primeraFunc
 };
 
 // -----------------------------------------------------
