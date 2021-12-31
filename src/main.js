@@ -301,6 +301,10 @@ curso.identificaTypeOf(EB);
 curso.identificaInstanceOf(2);
 curso.identificaInstanceOf('EB');
 curso.identificaInstanceOf(EB);
+curso.identificaInstanceOf({});
+curso.identificaInstanceOf(function() {});
 
 // -----------------------------------------------------
 
+// TEMA 3: PROFUNDIZANDO OBJETOS
+// ARREGLOS

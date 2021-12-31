@@ -438,6 +438,8 @@ function primeraFunc() {
 
 // -----------------------------------------------------
 
+// TEMA 3: PROFUNDIZANDO OBJETOS
+// ARREGLOS
 
 export {
   imprimir,
